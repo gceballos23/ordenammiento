@@ -36,6 +36,11 @@ cargarVectorManualStr(nombre, "Nombre");
 cargarVectorManualInt(anio, "Edad");
 cargarVectorManualInt(altura, "Altura");
 
+console.log("DATOS CARGADOS");
+console.log(nombre);
+console.log(anio);
+console.log(altura);
+
 function intercambiar(arreglo: number[], i: number, j: number) {
   let aux: number;
   aux = arreglo[i];
@@ -92,10 +97,6 @@ function ordenarBurbuja(
   }
 }
 
-console.log("DATOS CARGADOS");
-console.log(nombre);
-console.log(anio);
-console.log(altura);
 console.log("DATOS ORDENADOS");
 ordenarBurbuja(anio, altura, nombre, tamanoArreglo);
 console.log(nombre);
