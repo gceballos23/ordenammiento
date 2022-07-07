@@ -2,7 +2,7 @@ console.clear;
 
 let tamanoArreglo: number = 0;
 tamanoArreglo = Number(
-  prompt("Indique  cantidad  de persoNAS a cargar Vector : ")
+  prompt("Indique  cantidad  de personas a cargar Vector : ")
 );
 
 let nombre: string[] = new Array(tamanoArreglo);
@@ -13,15 +13,15 @@ function getRndInteger(min, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function cargarVectorManualStr(v: string[]) {
+function cargarVectorManualStr(v: string[], texto: string) {
   for (let indice = 0; indice < v.length; indice++) {
-    v[indice] = prompt("Ingrese el Nombre de la posicion ", indice, ":");
+    v[indice] = prompt("Ingrese el ", texto);
   }
 }
 
-function cargarVectorManualInt(v: number[]) {
+function cargarVectorManualInt(v: number[], texto: string) {
   for (let indice = 0; indice < v.length; indice++) {
-    v[indice] = prompt("Ingrese el Nombre de la posicion ", indice, ":");
+    v[indice] = prompt("Ingrese el ", texto);
   }
 }
 
@@ -32,9 +32,9 @@ function cargarVector(v: number[], min: number, max: number) {
   }
 }
 
-cargarVectorManualStr(nombre);
-cargarVectorManualInt(anio);
-cargarVectorManualInt(altura);
+cargarVectorManualStr(nombre, "Nombre");
+cargarVectorManualInt(anio, "Edad");
+cargarVectorManualInt(altura, "Altura");
 
 function intercambiar(arreglo: number[], i: number, j: number) {
   let aux: number;
