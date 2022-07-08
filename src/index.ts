@@ -1,9 +1,7 @@
-console.clear;
+console.clear();
 
 let tamanoArreglo: number = 0;
-tamanoArreglo = Number(
-  prompt("Indique  cantidad  de personas a cargar Vector : ")
-);
+tamanoArreglo = Number(prompt("Indique cantidad de personas a carga:"));
 
 let nombre: string[] = new Array(tamanoArreglo);
 let anio: number[] = new Array(tamanoArreglo);
@@ -15,13 +13,13 @@ function getRndInteger(min, max: number): number {
 
 function cargarVectorManualStr(v: string[], texto: string) {
   for (let indice = 0; indice < v.length; indice++) {
-    v[indice] = prompt("Ingrese el ", texto);
+    v[indice] = String(prompt("Ingrese el " + texto));
   }
 }
 
 function cargarVectorManualInt(v: number[], texto: string) {
   for (let indice = 0; indice < v.length; indice++) {
-    v[indice] = prompt("Ingrese el ", texto);
+    v[indice] = Number(prompt("Ingrese el " + texto));
   }
 }
 
@@ -52,7 +50,7 @@ function intercambiarStr(arreglo: string[], i: number, j: number) {
 
 function compararUnArray(arreglo: number[], i: number, j: number): number {
   let comparacion: number;
-  if (arreglo[i] == arreglo[j]) {
+  if (arreglo[i] === arreglo[j]) {
     comparacion = 0;
   } else if (arreglo[i] < arreglo[j]) {
     comparacion = -1;
@@ -64,7 +62,7 @@ function compararUnArray(arreglo: number[], i: number, j: number): number {
 
 function comparar(edad: number[], altura: number[], i: number, j: number) {
   let comparacion: number;
-  if (edad[i] == edad[j]) {
+  if (edad[i] === edad[j]) {
     comparacion = compararUnArray(altura, i, j);
   } else if (edad[i] < edad[j]) {
     comparacion = -1;
@@ -83,7 +81,7 @@ function ordenarBurbuja(
   // Algoritmo de burbujaa
   for (let i: number = 0; i < cantidad - 1; i++) {
     for (let j: number = 0; j < cantidad - 1 - i; j++) {
-      if (comparar(edad, altura, j, j + 1) == 1) {
+      if (comparar(edad, altura, j, j + 1) === 1) {
         intercambiar(edad, j, j + 1);
         intercambiar(altura, j, j + 1);
         intercambiarStr(nombre, j, j + 1);
